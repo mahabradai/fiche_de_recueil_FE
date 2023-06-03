@@ -1,0 +1,60 @@
+<p>edit works!</p>
+<div class="container">
+    <legend>Edit Item</legend>
+    <form  (ngSubmit)="update()">
+
+        <br>
+        
+          <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-form-field>
+                    <mat-label>Pathologie</mat-label>
+                    <input matInput [(ngModel)]="ficheForm.pathologie" id="name" name="name">
+                  </mat-form-field>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+        
+        
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-form-field>
+                    <mat-label>Type observation</mat-label>
+                    <input matInput [(ngModel)]="ficheForm.typeobservation" id="typeobservation" name="typeobservation">
+                  </mat-form-field>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+            </mat-expansion-panel>
+          
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-form-field>
+                    <mat-label>Cas familiaux</mat-label>
+                    <input matInput [(ngModel)]="ficheForm.cas_familiaux" id="cas_familiaux" name="cas_familiaux">
+                  </mat-form-field>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              
+              <mat-panel-description>
+
+                //checkbox
+                <mat-radio-group [(ngModel)]="labelPosition">
+                  <mat-radio-button class="example-margin" value="after">yes</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="before">no</mat-radio-button>
+                </mat-radio-group> //
+              </mat-panel-description>
+            </mat-expansion-panel>
+          
+          </mat-accordion>
+          
+          <div class="button-row" role="group">
+            <button type="submit" mat-raised-button color="primary">Save</button>
+            <button type="button" mat-button color="accent" (click)="cancel()">Cancel</button>
+          </div>
+        
+        </form>
+</div>
